@@ -9,6 +9,8 @@ def threeD_side_by_side(raven_df, trakstar_df, x, y, z, title=""):
     y_coords_trakstar = trakstar_df[y]
     z_coords_trakstar = trakstar_df[z]
 
+    plt.figure(figsize=(16, 10))
+
     plt.subplot(2, 3, 1)
     plt.plot(x_coords_raven, y_coords_raven, color='blue')
     plt.title('Raven Dataset')
@@ -50,6 +52,8 @@ def threeD_side_by_side(raven_df, trakstar_df, x, y, z, title=""):
 
 def oneD_side_by_side(raven_df, trakstar_df, var, title=""):
 
+    plt.figure(figsize=(10, 4))
+
     plt.subplot(1, 2, 1)
     plt.plot(raven_df['Frame'],raven_df[var], color = 'blue')
     plt.xlabel("Frame")
@@ -66,6 +70,9 @@ def oneD_side_by_side(raven_df, trakstar_df, var, title=""):
     plt.show()
 
 def threeD_overlap(raven_df, trakstar_df, x, y, z, title=""):
+
+    plt.figure(figsize=(16, 6))
+
     x_coords_raven = raven_df[x]
     y_coords_raven = raven_df[y]
     z_coords_raven = raven_df[z]
