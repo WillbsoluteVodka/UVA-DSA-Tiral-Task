@@ -1,11 +1,12 @@
-The stacked plots demonstrate a clear relationship between velocity and position, as higher velocities result in more significant changes in position, indicating a direct correlation.
+From the stacked plots of the TrakStar dataset, we can observe that:
+1. Both PSML_gripper_angle and PSMR_gripper_angle display similar trends, where the gripper remains in a neutral position for a considerable amount of time with rapid spikes. These spikes likely indicate brief periods of gripping or releasing objects.
+2. PSML_position_x shows significant variation, with some relatively flat periods interrupted by sudden changes in position. This suggests the movement is not smooth and exhibits abrupt shifts.
+    PSML_position_y and PSML_position_z both exhibit more consistent movement, with smaller fluctuations. However, there are still notable changes, indicating moments where the movements in the Y and Z axes become more pronounced. 
+3. Compared to the PSML position data, the PSMR related positions all exhibit rather drastic changes, indicating more movements with the right arm than the left arm.
 
-In the comparison and overlap plots, the XYZ positions and angles for both PSML and PSMR are generally consistent, with any minor differences not easily discernible from the graphs. This suggests that the TrakStar system is highly accurate.
+From the stacked plots of the raven dataset, we can observe that:
+1. The trends and observations noted in the TrakStar dataset still hold here. The overall movement patterns in the PSML and PSMR positions are generally similar, with the same fluctuations and shifts occurring across the X, Y, and Z axes.
+This consistency suggests a high degree of similarity between the two systems, indicating that the robotic arms are doing generally the same movements as the tracked data.
+2. The newly added velocity graphs show clear synchronization with their corresponding position graphs. Increases in velocity coincide with sharp changes in position, as expected.
 
-There are areas that could be improved. I primarily tested the code with the T2 dataset, although I did check the format of other datasets to ensure consistency. I believe the code is generalized enough to handle similar data formats.
-
-For data cleaning, I opted to retain only entries with corresponding timestamps in both datasets. While I explored filling in missing data using median values, the "Frame" column proved challenging to handle. Given that the amount of data lost by removing certain entries is negligible compared to the overall dataset, I decided this approach was sufficient.
-
-The exploratory data analysis (EDA) could be expanded by adjusting the variables, but many key relationships are already evident. The dynamic plotting with video could be improved by embedding the plots directly into the video, rather than displaying in separate windows. Additionally, there seems to be a slight lag (1-2 seconds) between the video and data plotting, likely due to either the data cleaning process or the time required for plotting. This could be optimized.
-
-I’m preparing for the GRE this weekend, so I had to wrap this task up quickly. While there is room for improvement, I believe this demonstrates my ability to work with data, learn new tools like OpenCV, and solve problems efficiently.
+The side-by-side plots of PSML_Position and PSML_angle, as well as the overlap plots of PSMR_Position and PSMR_angle, consistently indicate that the movements recorded by the two systems (Raven and TrakStar) are highly similar. The coordination between position and angle across both systems shows only minor variations, reinforcing the idea that both systems track movements in a very similar manner.
